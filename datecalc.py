@@ -10,5 +10,5 @@ def getDays(dayOfMonth, holidays):
     for i in range(monthsLeftInYear): 
         day = datetime(today.year, today.month, dayOfMonth) + relativedelta(months=i)
         while day.weekday() == SATURDAY or day.weekday() == SUNDAY or day in holidays:
-            day = day - relativedelta(days=1)
+            day -= relativedelta(days=1)
         yield day
